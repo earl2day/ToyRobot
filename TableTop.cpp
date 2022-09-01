@@ -9,31 +9,27 @@ TableTop::~TableTop()
 {
 }
 
-bool TableTop::Add(Robot& robot)
+void TableTop::Add(Robot* robot)
 {
-  m_robot_list.push_back(robot);
+  m_robot=robot;
 }
 
-bool TableTop::MoveRobot(int robotNum)
+void TableTop::RobotMove(void)
 {
- m_robot_list[robotNum+1].Move();
- return true;
+ m_robot->Move(m_xunit,m_yunit);
 }
 
-bool TableTop::LeftRobot(int robotNum)
+void TableTop::RobotLeft()
 {
- m_robot_list[robotNum+1].Left();
- return true;
+ m_robot->Left();
 }
 
-bool TableTop::RightRobot(int robotNum)
+void TableTop::RobotRight(void)
 {
- m_robot_list[robotNum+1].Right();
- return true;
+ m_robot->Right();
 }
 
-bool TableTop::ReportRobot(int robotNum)
+void TableTop::RobotReport(void)
 {
- m_robot_list[robotNum+1].Report();
- return true;
+ m_robot->Report();
 }

@@ -20,7 +20,18 @@ void UserInput::GetInput(void)
 
 char UserInput::GetCommand()
 {
-  if(m_ObjToken[0]=="PLACE") m_chCmd='P';
+  if(m_ObjToken[0]=="PLACE") 
+  {
+   m_chCmd='P';
+   m_iXPos = atoi(m_ObjToken[1].c_str());
+   m_iYPos = atoi(m_ObjToken[2].c_str());
+
+   if(m_ObjToken[3]=="NORTH") m_chDir='N';
+   else if(m_ObjToken[3]=="WEST") m_chDir='W';
+   else if(m_ObjToken[3]=="EAST") m_chDir='E';
+   else if(m_ObjToken[3]=="SOUTH") m_chDir='S';
+   else m_chDir='0';
+  }
   else if(m_ObjToken[0]=="MOVE") m_chCmd='M';
   else if(m_ObjToken[0]=="LEFT") m_chCmd='L';
   else if(m_ObjToken[0]=="RIGHT") m_chCmd='R';
@@ -47,51 +58,59 @@ bool UserInput::Parse(std::string input)
   }
 
   m_ObjToken.push_back(input.substr(startSub,input.size()));
+
+std::cout << "Token: " << m_ObjToken[0] << std::endl;
+std::cout << "Token: " << m_ObjToken[1] << std::endl;
+std::cout << "Token: " << m_ObjToken[2] << std::endl;
+std::cout << "Token: " << m_ObjToken[3] << std::endl;
+
   return true;
 }
 
 int UserInput::GetXPosition()
 {
- if(m_ObjToken[1]!="") m_iXPos = atoi(m_ObjToken[1].c_str());
- else m_iXPos=-1;
-
  return m_iXPos;
 }
 
 int UserInput::GetYPosition()
 {
- if(m_ObjToken[2]!="") m_iYPos = atoi(m_ObjToken[2].c_str());
- else m_iXPos=-1;
-
  return m_iYPos;
 }
 
 char UserInput::GetDirection()
 {
- if(m_ObjToken[3]=="NORTH") m_chDir='N';
- else if(m_ObjToken[3]=="WEST") m_chDir='W';
- else if(m_ObjToken[3]=="EAST") m_chDir='E';
- else if(m_ObjToken[3]=="SOUTH") m_chDir='S';
- else m_chDir='0';
-
  return m_chDir;
 }
 
-bool UserInput::SetYPosition(int yPos)
+void UserInput::SetYPosition(int yPos)
 {
  m_iYPos=yPos;
- return true;
 }
 
-bool UserInput::SetXPosition(int xPos)
+void UserInput::SetXPosition(int xPos)
 {
  m_iXPos=xPos;
- return true;
 }
 
-bool UserInput::SetDirection(char chDir)
+void UserInput::SetDirection(char chDir)
 {
  m_chDir=chDir;
- return true;
 }
 
+void UserInput::IncXPos(void)
+{
+ m_iXPos++;
+}
+void UserInput::IncYPos(void)
+{
+  m_iYPos++;
+}
+void UserInput::DecXPos(void)
+{
+ m_iXPos--;
+}
+
+void UserInput::DecYPos(void)
+{
+ m_iYPos--;
+}

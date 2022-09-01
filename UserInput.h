@@ -13,9 +13,13 @@ public:
 	int GetXPosition();
 	int GetYPosition();
 	char GetDirection();
-	bool SetYPosition(int yPos);
-	bool SetXPosition(int xPos);
-	bool SetDirection(char chDir);
+	void SetYPosition(int yPos);
+	void SetXPosition(int xPos);
+	void SetDirection(char chDir);
+        void IncXPos(void);
+        void IncYPos(void);
+        void DecXPos(void);
+        void DecYPos(void);
 private:
 	bool Parse(std::string input);
 

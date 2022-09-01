@@ -7,12 +7,18 @@ class Robot
 public:
 	Robot();
 	~Robot();
-	void Add(UserInput& input);
-	bool Move();
-	bool Left();
-	bool Right();
-	bool Report();
+	void Add(UserInput* input);
+        char GetDirection();
+	void Move(int xlimit, int ylimit);
+	void Left();
+	void Right();
+	void Report();
+        void IncXPos(void);
+        void IncYPos(void);
+        void DecXPos(void);
+        void DecYPos(void);
 private:
-	UserInput m_ObjInput;
+        void Error(std::string message);
+	UserInput* m_ObjInput;
 };
 #endif

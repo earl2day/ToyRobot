@@ -1,3 +1,4 @@
+#include <iostream>
 #include "Robot.h"
 
 Robot::Robot()
@@ -8,32 +9,84 @@ Robot::~Robot()
 {
 }
 
-void Robot::Add(UserInput& input)
+void Robot::Add(UserInput* input)
 {
  m_ObjInput=input;
 }
 
-bool Robot::Move()
-{ 
- return true;
+char Robot::GetDirection()
+{
+ return m_ObjInput->GetDirection();
 }
 
-bool Robot::SetXPos(int xPos)
+void Robot::Move(int xlimit, int ylimit)
 {
- return true;
+ switch(m_ObjInput->GetDirection())
+ {
+   case 'N': (m_ObjInput->GetYPosition()<ylimit)?IncYPos():Error("NORTH move error!"); break;
+   case 'S': (m_ObjInput->GetYPosition()>0)?DecYPos():Error("SOUTH move error!"); break;
+   case 'W': (m_ObjInput->GetXPosition()>0)?DecXPos():Error("WEST move error!"); break;
+   case 'E': (m_ObjInput->GetXPosition()<xlimit)?IncXPos():Error("EAST move error!"); break; 
+ }
 }
 
-bool Robot::SetYPos(int yPos)
+void Robot::Error(std::string message)
 {
- return true;
+ std::cout << message << std::endl;
 }
 
-bool Robot::SetDirection(char chDir)
+void Robot::Left(void)
 {
- return true;
+ switch(m_ObjInput->GetDirection())
+ {
+  case 'N': m_ObjInput->SetDirection('W');
+  case 'S': m_ObjInput->SetDirection('E');
+  case 'W': m_ObjInput->SetDirection('S');
+  case 'E': m_ObjInput->SetDirection('N');
+ }
 }
 
-bool Robot::GetReport()
+void Robot::Right(void)
 {
- return true;
+ switch(m_ObjInput->GetDirection())
+ {
+  case 'N': m_ObjInput->SetDirection('E');
+  case 'S': m_ObjInput->SetDirection('W');
+  case 'W': m_ObjInput->SetDirection('N');
+  case 'E': m_ObjInput->SetDirection('S');
+ }
 }
+void Robot::Report(void)
+{
+ std::string direction;
+ switch(m_ObjInput->GetDirection())
+ {
+  case 'N': direction="NORTH"; break;
+  case 'S': direction="SOUTH"; break;
+  case 'W': direction="WEST"; break;
+  case 'E': direction="EAST"; break;
+ }
+
+ std::cout << "\nOutput: " << m_ObjInput->GetXPosition() << "," << m_ObjInput->GetYPosition() << direction << std::endl;
+}
+
+void Robot::IncXPos(void)
+{
+ m_ObjInput->IncXPos();
+}
+
+void Robot::IncYPos(void)
+{
+ m_ObjInput->IncYPos();
+}
+
+void Robot::DecXPos(void)
+{
+ m_ObjInput->DecXPos();
+}
+
+void Robot::DecYPos(void)
+{
+ m_ObjInput->DecYPos();
+}
+

@@ -5,17 +5,18 @@
 
 int main()
 {
- TableTop table;
+ TableTop table(5,5);
  Robot robot;
+ table.Add(&robot); 
  UserInput input;
- table.Add(robot);
+
  for(;;)
  {
    input.GetInput();
-   robot.Add(input);
    switch(input.GetCommand())
    {
-    case 'P'  : std::cout << std::endl << "Command PLACE" << std::endl;
+    case 'P'  : //std::cout << std::endl << "Command PLACE" << std::endl;
+                robot.Add(&input);
 	        break;
     case 'M'  : std::cout << std::endl << "Command MOVE" << std::endl;
 		break;
@@ -23,7 +24,8 @@ int main()
 		break;
     case 'R'  : std::cout << std::endl << "Command RIGHT" << std::endl;
 		break;
-    case 'O'  : std::cout << std::endl << "Command REPORT" << std::endl;
+    case 'O'  : //std::cout << std::endl << "Command REPORT" << std::endl;
+                table.RobotReport();
 		break; 
    } 
  }
