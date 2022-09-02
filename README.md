@@ -1,5 +1,5 @@
 # ToyRobot
-A games where a table size is set and place the robot to any valid location in the table. The robot can be move or change it's direction. 
+A game where a table size is set and place the robot to any valid location in the table. The robot can be move or change it's direction. 
 
 To play:
 1. Type PLACE x,y,d where x is the horizontal location in the table, y is the vertical location in the table, and d is the direction which can be NORTH SOUTH WEST or EAST
