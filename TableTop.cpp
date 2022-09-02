@@ -1,3 +1,8 @@
+/*
+Author: Earl Rex Arao-arao
+Email : earl2day@gmail.com
+*/
+
 #include "TableTop.h"
 
 TableTop::TableTop(int xunit, int yunit)

@@ -1,3 +1,8 @@
+/*
+Author: Earl Rex Arao-arao
+Email : earl2day@gmail.com
+*/
+
 #ifndef _USER_INPUT_
 #define _USER_INPUT_
 #include <string>

@@ -1,3 +1,8 @@
+/*
+Author: Earl Rex Arao-arao
+Email : earl2day@gmail.com
+*/
+
 #ifndef _TABLE_TOP_
 #define _TABLE_TOP_
 

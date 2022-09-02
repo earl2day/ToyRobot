@@ -1,3 +1,8 @@
+/*
+Author: Earl Rex Arao-arao
+Email : earl2day@gmail.com
+*/
+
 #ifndef _ROBOT_H_
 #define _ROBOT_H_
 #include "UserInput.h"
