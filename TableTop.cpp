@@ -9,27 +9,12 @@ TableTop::~TableTop()
 {
 }
 
-void TableTop::Add(Robot* robot)
+int TableTop::GetXSize(void)
 {
-  m_robot=robot;
+ return m_xunit;
 }
 
-void TableTop::RobotMove(void)
+int TableTop::GetYSize(void)
 {
- m_robot->Move(m_xunit,m_yunit);
-}
-
-void TableTop::RobotLeft()
-{
- m_robot->Left();
-}
-
-void TableTop::RobotRight(void)
-{
- m_robot->Right();
-}
-
-void TableTop::RobotReport(void)
-{
- m_robot->Report();
+ return m_yunit;
 }

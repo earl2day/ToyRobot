@@ -1,15 +1,16 @@
 #ifndef _ROBOT_H_
 #define _ROBOT_H_
 #include "UserInput.h"
+#include "TableTop.h"
 
 class Robot
 {
 public:
-	Robot();
+	Robot(TableTop* table);
 	~Robot();
-	void Add(UserInput* input);
+	void Place(UserInput* input);
         char GetDirection();
-	void Move(int xlimit, int ylimit);
+	void Move();
 	void Left();
 	void Right();
 	void Report();
@@ -20,5 +21,6 @@ public:
 private:
         void Error(std::string message);
 	UserInput* m_ObjInput;
+        TableTop* m_tableTop;
 };
 #endif
