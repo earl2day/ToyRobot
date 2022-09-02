@@ -68,7 +68,7 @@ void Robot::Report(void)
   case 'E': direction="EAST"; break;
  }
 
- std::cout << "\nOutput: " << m_ObjInput->GetXPosition() << "," << m_ObjInput->GetYPosition() << "," << direction << std::endl;
+ std::cout << "Output: " << m_ObjInput->GetXPosition() << "," << m_ObjInput->GetYPosition() << "," << direction << std::endl;
 }
 
 void Robot::IncXPos(void)
