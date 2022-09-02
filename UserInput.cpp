@@ -36,6 +36,7 @@ char UserInput::GetCommand()
   else if(m_ObjToken[0]=="LEFT") m_chCmd='L';
   else if(m_ObjToken[0]=="RIGHT") m_chCmd='R';
   else if(m_ObjToken[0]=="REPORT") m_chCmd='O';
+  else if(m_ObjToken[0]=="EXIT") m_chCmd='X';
   else m_chCmd='0';
 
   return m_chCmd;

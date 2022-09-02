@@ -1,3 +1,8 @@
+/*
+Author: Earl Rex Arao-arao
+Email : earl2day@gmail.com
+*/
+
 #include <iostream>
 #include "Robot.h"
 #include "TableTop.h"
@@ -5,7 +10,7 @@
 
 int main()
 {
- TableTop table(5,5);
+ TableTop table(10,10);
  Robot robot(&table);
  UserInput input;
 
@@ -24,6 +29,7 @@ int main()
 		break;
     case 'O'  : robot.Report();
 		break; 
+    case 'X'  : exit(0);
    } 
  }
  return 0;
