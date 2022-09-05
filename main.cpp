@@ -15,7 +15,6 @@ int main()
  {
   std::cout<< "Please enter table horizontal and vertical size Example: 10 10" << std::endl; 
   std::cin >> xSize >> ySize;
-  std::cout << xSize << "," << ySize << std::endl;
   if(xSize<0 || ySize<0) {xSize=-1; ySize=-1; continue;}
   else break;
  }
