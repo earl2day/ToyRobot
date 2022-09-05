@@ -10,7 +10,17 @@ Email : earl2day@gmail.com
 
 int main()
 {
- TableTop table(10,10);
+ int xSize=-1, ySize=-1;
+ for(;;)
+ {
+  std::cout<< "Please enter table horizontal and vertical size Example: 10 10" << std::endl; 
+  std::cin >> xSize >> ySize;
+  std::cout << xSize << "," << ySize << std::endl;
+  if(xSize<0 || ySize<0) {xSize=-1; ySize=-1; continue;}
+  else break;
+ }
+
+ TableTop table(xSize,ySize);
  Robot robot(&table);
  UserInput input;
 

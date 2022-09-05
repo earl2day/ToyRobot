@@ -10,6 +10,10 @@ UserInput::UserInput()
 {
   m_strUserInput="";
   m_chCmd='0';
+  m_iXPos=-1;
+  m_iYPos=-1;
+  char m_chDir='0';
+
 }
 
 UserInput::~UserInput()
