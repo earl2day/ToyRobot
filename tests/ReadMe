@@ -1,0 +1,2 @@
+To build the test files do below:
+g++ *.cpp -lcppunit
