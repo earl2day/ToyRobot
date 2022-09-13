@@ -1,2 +1,7 @@
 To build the test files do below:
 g++ *.cpp -lcppunit
+
+To setup CPPUnit download the source then,
+./configure
+make
+make install
