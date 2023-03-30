@@ -5,6 +5,8 @@
 
 int main(int argc, char* argv[])
 {
+  int xSize = -1, ySize = -1;
+
  //check if there is input file and
   if (argc > 1)
   {
@@ -16,7 +18,6 @@ int main(int argc, char* argv[])
   }
   else
   {
-      int xSize = -1, ySize = -1;
       for (;;)
       {
           std::cout << "Please enter table horizontal and vertical size Example: 10 10" << std::endl;
