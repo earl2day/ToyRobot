@@ -5,7 +5,7 @@ Email : earl2day@gmail.com
 
 #ifndef _ROBOT_H_
 #define _ROBOT_H_
-#include "UserInput.h"
+#include "Input.h"
 #include "TableTop.h"
 
 class Robot
@@ -13,7 +13,7 @@ class Robot
 public:
 	Robot(TableTop* table);
 	~Robot();
-	void Place(UserInput* input);
+	void Place(Input* input);
         char GetDirection();
 	void Move();
 	void Left();
@@ -25,7 +25,7 @@ public:
         void DecYPos(void);
 private:
         void Error(std::string message);
-	UserInput* m_ObjInput;
+	    Input* m_ObjInput;
         TableTop* m_tableTop;
 };
 #endif

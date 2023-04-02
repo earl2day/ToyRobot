@@ -19,15 +19,24 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\FileInput.cpp" />
+    <ClCompile Include="..\..\Input.cpp" />
     <ClCompile Include="..\..\main.cpp" />
     <ClCompile Include="..\..\Robot.cpp" />
+    <ClCompile Include="..\..\SmartPointer.cpp" />
     <ClCompile Include="..\..\TableTop.cpp" />
     <ClCompile Include="..\..\UserInput.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\FileInput.h" />
+    <ClInclude Include="..\..\Input.h" />
     <ClInclude Include="..\..\Robot.h" />
+    <ClInclude Include="..\..\SmartPointer.h" />
     <ClInclude Include="..\..\TableTop.h" />
     <ClInclude Include="..\..\UserInput.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="..\..\file.txt" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>

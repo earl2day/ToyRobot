@@ -7,7 +7,7 @@ Email : earl2day@gmail.com
 #include "Robot.h"
 
 Robot::Robot(TableTop* table)
- :m_tableTop(table)
+ :m_tableTop(table), m_ObjInput(NULL)
 {
 }
 
@@ -15,7 +15,7 @@ Robot::~Robot()
 {
 }
 
-void Robot::Place(UserInput* input)
+void Robot::Place(Input* input)
 {
  m_ObjInput=input;
 }

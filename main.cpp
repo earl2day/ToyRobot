@@ -1,42 +1,32 @@
 #include <iostream>
+#include <typeinfo>
 #include "Robot.h"
 #include "TableTop.h"
+#include "Input.h"
 #include "UserInput.h"
+#include "FileInput.h"
 
 int main(int argc, char* argv[])
 {
-  int xSize = -1, ySize = -1;
-
- //check if there is input file and
-  if (argc > 1)
+    Input* input;
+  if (argc > 1) //check if there is input file
   {
-      //open the file
-      ///read the file per line
-      //first line should be table size
-      //second line should be initial location
-      //next if the moves like MOVE, REPORT, LEFT, RIGHT, EXIT
+      input = new FileInput(argv[1]);
   }
   else
   {
-      for (;;)
-      {
-          std::cout << "Please enter table horizontal and vertical size Example: 10 10" << std::endl;
-          std::cin >> xSize >> ySize;
-          if (xSize < 0 || ySize < 0) { xSize = -1; ySize = -1; continue; }
-          else break;
-      }
+      input = new UserInput();
   }
 
- TableTop table(xSize,ySize);
+ TableTop table(input->GetRowSize(), input->GetColSize());
  Robot robot(&table);
- UserInput input;
 
  for(;;)
  {
-   input.GetInput();
-   switch(input.GetCommand())
+   input->GetInput();
+   switch(input->GetCommand())
    {
-    case 'P'  : robot.Place(&input);
+    case 'P'  : robot.Place(input);
 	        break;
     case 'M'  : robot.Move();
 		break;
@@ -49,5 +39,9 @@ int main(int argc, char* argv[])
     case 'X'  : exit(0);
    } 
  }
+
+ if (typeid(*input).name() == "FileInput") delete (FileInput*)input;
+ else delete (UserInput*)input;
+
  return 0;
 }
