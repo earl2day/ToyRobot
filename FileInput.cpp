@@ -18,16 +18,6 @@ FileInput::~FileInput()
 {
 }
 
-int FileInput::GetRowSize()
-{
-    return m_iRow;
-}
-
-int FileInput::GetColSize()
-{
-    return m_iCol;
-}
-
 void FileInput::GetInput(void)
 {
     std::string line;

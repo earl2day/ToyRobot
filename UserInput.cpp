@@ -23,13 +23,3 @@ void UserInput::GetInput(void)
   std::getline(std::cin,line);
   Parse(line);
 }
-
-int UserInput::GetRowSize()
-{
-    return m_iRow;
-}
-
-int UserInput::GetColSize()
-{
-    return m_iCol;
-}

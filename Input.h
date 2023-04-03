@@ -9,8 +9,8 @@ public:
 	Input();
 	~Input();
     virtual void GetInput(void)=0;
-	virtual int GetRowSize()=0;
-	virtual int GetColSize()=0;
+	int GetRowSize();
+	int GetColSize();
 	char GetCommand(void);
 	char GetDirection();
 	int GetXPosition();

@@ -10,7 +10,5 @@ public:
 	UserInput();
 	~UserInput();
 	void GetInput(void);
-	int GetRowSize();
-	int GetColSize();
 };
 #endif

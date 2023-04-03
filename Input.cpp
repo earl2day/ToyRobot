@@ -56,6 +56,16 @@ bool Input::Parse(std::string input)
     return true;
 }
 
+int Input::GetRowSize()
+{
+    return m_iRow;
+}
+
+int Input::GetColSize()
+{
+    return m_iCol;
+}
+
 int Input::GetXPosition()
 {
     return m_iXPos;
